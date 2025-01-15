@@ -4,7 +4,13 @@ using NUnit.Framework;
 
 namespace KTPO4310.Shakirzanov.UnitTest.src.LogAn
 {
-    int a = 12;
+    public class LogAnalyzer
+    {
+        public bool IsValidLogFileName(string fileName)
+        {
+            return true;
+        }
+    }
 }
 
 
