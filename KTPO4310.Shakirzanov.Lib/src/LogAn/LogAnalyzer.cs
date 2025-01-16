@@ -1,26 +1,15 @@
-﻿using System;
+﻿using KTPO4310.Shakirzanov.Lib.src.LogAn;
 
 namespace KTPO4310.Shakirzanov.Lib.src.LogAn
 {
+    /// <summary> Анализатор лог. файлов </summary>
     public class LogAnalyzer
     {
-        
-        public bool WasLastFileNameValid { get; set; }
+        /// <summary> Проверка правильности имени файла</summary>
         public bool IsValidLogFileName(string fileName)
         {
-            WasLastFileNameValid = false;
-
-            if (string.IsNullOrEmpty(fileName))
-            {
-                throw new ArgumentException("имя файла должно быть задано");
-            }
-            if (fileName.EndsWith(".log", StringComparison.CurrentCultureIgnoreCase))
-            {
-                return false;
-            }
-            
-            WasLastFileNameValid = true;
-            return true;
+            IExtensionManager extensionManager = ExtensionManagerFactory.Create(); //Получаем менеджер из фабрики
+            return extensionManager.IsValid(fileName);
         }
     }
 }

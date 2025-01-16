@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTPO4310.Shakirzanov.UnitTest", "KTPO4310.Shakirzanov.UnitTest\KTPO4310.Shakirzanov.UnitTest.csproj", "{B146315B-1088-47E0-AA38-FF08923A4F37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTPO4310.Shakirzanov.Lib", "KTPO4310.Shakirzanov.Lib\KTPO4310.Shakirzanov.Lib.csproj", "{84CE6410-FF16-41FB-BBDF-31822A91A95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTPO4310.Shakirzanov.Service", "KTPO4310.Shakirzanov.Service\KTPO4310.Shakirzanov.Service.csproj", "{005B3A20-BB2E-47BD-A443-D3F04381B8FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{84CE6410-FF16-41FB-BBDF-31822A91A95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84CE6410-FF16-41FB-BBDF-31822A91A95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84CE6410-FF16-41FB-BBDF-31822A91A95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005B3A20-BB2E-47BD-A443-D3F04381B8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005B3A20-BB2E-47BD-A443-D3F04381B8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005B3A20-BB2E-47BD-A443-D3F04381B8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005B3A20-BB2E-47BD-A443-D3F04381B8FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
