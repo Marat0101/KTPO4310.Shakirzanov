@@ -1,5 +1,5 @@
 ﻿using System;
-using KTPO4310.Shakirzanov.Lib.src.LogAn; // Импортируем пространство имен для LogAnalyzer
+using KTPO4310.Shakirzanov.Lib.src.LogAn; // Make sure this is the correct namespace!
 
 namespace KTPO4310.Shakirzanov.Service
 {
@@ -7,23 +7,48 @@ namespace KTPO4310.Shakirzanov.Service
     {
         public static void Main(string[] args)
         {
-            LogAnalyzer logAnalyzer = new LogAnalyzer();
-
-            // Примеры имен файлов для проверки
-            string[] fileNames =
+            try
             {
-                "logfile.log",     // Правильное расширение
-                "document.txt",    // Правильное расширение
-                "report.log",      // Правильное расширение
-                "image.png",       // Неправильное расширение
-                "archive.zip",     // Неправильное расширение
-                "notes.doc"        // Неправильное расширение
-            };
+                LogAnalyzer logAnalyzer = new LogAnalyzer();
 
-            foreach (var fileName in fileNames)
+                string[] fileNames =
+                {
+                    "app.log",      // Valid log file
+                    "error.log",    // Valid log file
+                    "data.txt",     // Invalid txt file
+                    "image.jpg",    // Invalid jpg file
+                    "config.ini",   // Invalid ini file
+                    "file.LOG",    // Valid Log file (case insensitive)
+                    "old.log.bak",   // Invalid with log inside the file name
+                    ".log",         // Valid, though unusual.
+                    "nolog",  // invalid
+                    "notes.doc",   // invalid
+                    null,           // Testing null input
+                    ""              // Testing empty input
+                };
+
+
+                foreach (var fileName in fileNames)
+                {
+
+                    if (fileName == null)
+                    {
+                        Console.WriteLine($"File: 'NULL', Valid extension: False");
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(fileName))
+                    {
+                        Console.WriteLine($"File: 'Empty string', Valid extension: False");
+                        continue;
+                    }
+
+                    bool isValid = logAnalyzer.IsValidLogFileName(fileName);
+                    Console.WriteLine($"File: '{fileName}', Valid extension: {isValid}");
+                }
+            }
+            catch (Exception ex)
             {
-                bool isValid = logAnalyzer.IsValidLogFileName(fileName);
-                Console.WriteLine($"Файл '{fileName}' имеет допустимое расширение: {isValid}");
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
     }
